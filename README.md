@@ -1,7 +1,9 @@
 # 🤖 AI Interview Coach
 
 A full-stack MERN application that helps users practice technical interviews with AI-powered question generation, answer evaluation, and personalized feedback. Built with local AI models for privacy and cost-effectiveness.
+
 Live project link: https://ai-interview-frontend-ivory.vercel.app/
+
 
 For Login:
    email: babyabd2020@gmail.com
