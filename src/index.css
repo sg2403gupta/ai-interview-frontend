@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GLOBAL FONT */
+html,
+body {
+  font-family: "Lexend Deca", system-ui, sans-serif;
+}
+
+/* =========================
+   LIGHT THEME (ONLY)
+========================= */
+:root {
+  --bg-main: #fff8e8;
+  --bg-surface: #f7eed3;
+  --accent: #aab396;
+  --text-primary: #674636;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Root App Wrapper */
+.app-root {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: "Lexend Deca", system-ui, sans-serif;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+/* Responsive text scaling */
+html {
+  font-size: clamp(14px, 1.2vw, 16px);
+}
+
+/* Shared container utility */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Card / Surface styling */
+.surface {
+  background: var(--bg-surface);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+/* Accent elements */
+.accent {
+  color: var(--accent);
+}
+
+/* Buttons */
+.button-primary {
+  background: var(--text-primary);
+  color: #fff8e8;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.button-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Mobile-first layout */
+@media (min-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease-out both;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out both;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
