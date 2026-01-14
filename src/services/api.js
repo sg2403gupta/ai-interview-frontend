@@ -15,7 +15,7 @@ class ApiService {
 
   // Auth endpoints
   async register(name, email, password) {
-    const response = await fetch(`${this.baseURL}/auth/register`, {
+    const response = await fetch(`${this.baseURL}/api/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password }),
@@ -24,7 +24,7 @@ class ApiService {
   }
 
   async login(email, password) {
-    const response = await fetch(`${this.baseURL}/auth/login`, {
+    const response = await fetch(`${this.baseURL}/api/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -34,7 +34,7 @@ class ApiService {
 
   // Practice session endpoints
   async startSession(topic, mode) {
-    const response = await fetch(`${this.baseURL}/practice/start-session`, {
+    const response = await fetch(`${this.baseURL}/api/practice/start-session`, {
       method: "POST",
       headers: this.getAuthHeaders(),
       body: JSON.stringify({ topic, mode }),
@@ -43,34 +43,43 @@ class ApiService {
   }
 
   async generateQuestion(sessionId, topic, previousQuestions) {
-    const response = await fetch(`${this.baseURL}/practice/generate-question`, {
-      method: "POST",
-      headers: this.getAuthHeaders(),
-      body: JSON.stringify({ sessionId, topic, previousQuestions }),
-    });
+    const response = await fetch(
+      `${this.baseURL}/api/practice/generate-question`,
+      {
+        method: "POST",
+        headers: this.getAuthHeaders(),
+        body: JSON.stringify({ sessionId, topic, previousQuestions }),
+      }
+    );
     return response.json();
   }
 
   async answerQuestion(sessionId, question, topic) {
-    const response = await fetch(`${this.baseURL}/practice/answer-question`, {
-      method: "POST",
-      headers: this.getAuthHeaders(),
-      body: JSON.stringify({ sessionId, question, topic }),
-    });
+    const response = await fetch(
+      `${this.baseURL}/api/practice/answer-question`,
+      {
+        method: "POST",
+        headers: this.getAuthHeaders(),
+        body: JSON.stringify({ sessionId, question, topic }),
+      }
+    );
     return response.json();
   }
 
   async evaluateAnswer(sessionId, question, answer) {
-    const response = await fetch(`${this.baseURL}/practice/evaluate-answer`, {
-      method: "POST",
-      headers: this.getAuthHeaders(),
-      body: JSON.stringify({ sessionId, question, answer }),
-    });
+    const response = await fetch(
+      `${this.baseURL}/api/practice/evaluate-answer`,
+      {
+        method: "POST",
+        headers: this.getAuthHeaders(),
+        body: JSON.stringify({ sessionId, question, answer }),
+      }
+    );
     return response.json();
   }
 
   async modifyAnswer(sessionId, messageId, instruction) {
-    const response = await fetch(`${this.baseURL}/practice/modify-answer`, {
+    const response = await fetch(`${this.baseURL}/api/practice/modify-answer`, {
       method: "POST",
       headers: this.getAuthHeaders(),
       body: JSON.stringify({ sessionId, messageId, instruction }),
@@ -79,7 +88,7 @@ class ApiService {
   }
 
   async getHistory() {
-    const response = await fetch(`${this.baseURL}/practice/history`, {
+    const response = await fetch(`${this.baseURL}/api/practice/history`, {
       headers: this.getAuthHeaders(),
     });
     return response.json();
@@ -87,7 +96,7 @@ class ApiService {
 
   async deleteSession(sessionId) {
     const response = await fetch(
-      `${this.baseURL}/practice/session/${sessionId}`,
+      `${this.baseURL}/api/practice/session/${sessionId}`,
       {
         method: "DELETE",
         headers: this.getAuthHeaders(),
