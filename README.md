@@ -6,7 +6,8 @@ Live project link: https://ai-interview-frontend-ivory.vercel.app/
 
 
 For Login:
-   email: babyabd2020@gmail.com
+   email: babyabd2026@gmail.com
+   
    password: Baby@bd123
 
 
