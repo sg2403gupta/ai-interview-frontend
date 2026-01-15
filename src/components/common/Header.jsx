@@ -11,7 +11,7 @@ export default function Header({ user, logout }) {
             <Brain className="w-6 h-6 text-[var(--text-primary)]" />
           </div>
           <span className="text-lg sm:text-xl font-bold text-[var(--text-primary)]">
-            AI Interview Coach
+            PrepBot
           </span>
         </div>
 

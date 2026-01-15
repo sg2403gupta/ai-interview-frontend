@@ -46,7 +46,7 @@ export default function AuthPage() {
               <Brain className="w-7 h-7 text-[var(--text-primary)]" />
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">
-              AI Interview Coach
+              PrepBot
             </h1>
             <p className="mt-2 text-sm sm:text-base text-[var(--text-primary)]/70">
               {isLogin ? "Welcome back!" : "Create your account"}
