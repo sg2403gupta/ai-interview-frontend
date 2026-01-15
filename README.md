@@ -2,6 +2,16 @@
 
 A full-stack MERN application that helps users practice technical interviews with AI-powered question generation, answer evaluation, and personalized feedback. Built with local AI models for privacy and cost-effectiveness.
 
+Live project link: https://ai-interview-frontend-ivory.vercel.app/
+
+
+For Login:
+
+   email: babyabd2026@gmail.com
+   
+   password: Baby@bd123
+
+
 ![AI Interview Coach](https://img.shields.io/badge/MERN-Stack-green)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)
